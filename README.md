@@ -28,16 +28,16 @@
 
 * directions to install  
 
-bash
+	bash
 
-pip3 install -r requirements.txt
+		pip3 install -r requirements.txt
 
 
 * directions to execute 
 
-bash
+	bash
 
-python3 human_activity_reco.py --model resnet-34_kinetics.onnx --classes action_recognition_kinetics.txt --input example_activities.mp4
+		python3 human_activity_reco.py --model resnet-34_kinetics.onnx --classes action_recognition_kinetics.txt --input example_activities.mp4
 
 
 ## Contributors
