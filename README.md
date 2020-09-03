@@ -2,8 +2,8 @@
 <a href="https://dscvit.com">
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
 </a>
-	<h2 align="center"> < Insert Project Title Here > </h2>
-	<h4 align="center"> < Insert Project Description Here > <h4>
+	<h2 align="center"> Background Music Generation for Videos  </h2>
+	<h4 align="center"> Given a video the task is to automatically create background music for the given video. <h4>
 </p>
 
 ---
@@ -23,19 +23,22 @@
 ## Instructions to run
 
 * Pre-requisites:
+	-  https://drive.google.com/drive/u/0/folders/1jXcriBNsaVRd27Q4894wnjBIXNOju8Dl
 	-  < insert pre-requisite >
-	-  < insert pre-requisite >
 
-* < directions to install > 
-```bash
-< insert code >
-```
+* directions to install  
 
-* < directions to execute >
+	bash
 
-```bash
-< insert code >
-```
+		pip3 install -r requirements.txt
+
+
+* directions to execute 
+
+	bash
+
+		python3 human_activity_reco.py --model resnet-34_kinetics.onnx --classes action_recognition_kinetics.txt --input example_activities.mp4
+
 
 ## Contributors
 
