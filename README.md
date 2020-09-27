@@ -24,7 +24,7 @@
 
 * Pre-requisites:
 	-  https://drive.google.com/drive/u/0/folders/1jXcriBNsaVRd27Q4894wnjBIXNOju8Dl
-	-  < insert pre-requisite >
+
 
 * directions to install  
 
