@@ -1,5 +1,4 @@
-<p align="center">
-<a href="https://dscvit.com">
+<p align="center"> <a href="https://dscvit.com">
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
 </a>
 	<h2 align="center"> Background Music Generation for Videos  </h2>
@@ -24,7 +23,7 @@
 
 * Pre-requisites:
 	-  https://drive.google.com/drive/u/0/folders/1jXcriBNsaVRd27Q4894wnjBIXNOju8Dl
-	-  < insert pre-requisite >
+	
 
 * directions to install  
 
