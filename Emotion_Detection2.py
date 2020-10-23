@@ -36,21 +36,17 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
     model.add(Dense(7, activation = 'softmax'))
 
     model.load_weights(emotion_model_path)
-    #print(model.summary())
     emotion_dict={0:"Angry",1:"Disgusted",2:"Fearful",3:"Happy",4:"Neutral",5:"Sad",6:"Surprised"}
 
     cap = cv2.VideoCapture(input_video)
 
     property_id = int(cv2.CAP_PROP_FRAME_COUNT) 
     total_no_of_frames = int(cv2.VideoCapture.get(cap, property_id)) 
-    # print("Total nunmber of frames in the video are", total_no_of_frames)
 
     fps = cap.get(cv2.CAP_PROP_FPS)
-    # print("Frames per second for this video is : {0}".format(fps))
 
     seconds_interval = fps * 10
     no_of_loops = int(total_no_of_frames // seconds_interval) + 1
-    # print("No of loops to be covered", no_of_loops)
 
     loops_covered = 0 # Tracks the number of 10 seconds interval covered.
 
@@ -78,7 +74,6 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
 
         net.setInput(blob)
         detections = net.forward()
-        # print(detections)
         no_of_person = 0
 
         for i in range(0,detections.shape[2]):
@@ -87,7 +82,6 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
             if confidence < c:
                 break
 
-            # print(confidence)
             no_of_person += 1
             box = detections[0, 0, i, 3 : 7] * np.array([w, h, w, h])
             (startX, startY, endX, endY) = box.astype("int")
@@ -100,7 +94,6 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
         
         # Extract the ROI of the face from the grayscale image
             roi = gray[startY : endY, startX : endX]
-            # print(roi.shape)
 
             if roi.shape[0] == 0 or roi.shape[1] == 0:
                 break
@@ -109,11 +102,8 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
 
             preds = model.predict(roi)[0]
             pred1 = np.array(preds)
-            # print(pred1)
 
             sum_of_emotions_probabilities = sum_of_emotions_probabilities + pred1
-
-        # print(sum_of_emotions_probabilities)
 
         if limit == int(seconds_interval):
             loops_covered += 1
@@ -121,7 +111,7 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
             if sum_of_emotions_probabilities == [0, 0, 0, 0, 0, 0, 0]:
                 probabilities.append([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
                 labels.append("No Person Detected")
-                # print("10 seconds paased")
+                # 10 seconds passed
             else:
                 sum_of_emotions_probabilities = np.array(sum_of_emotions_probabilities)
                 sum_of_emotions_probabilities = sum_of_emotions_probabilities / count
@@ -129,19 +119,13 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
                 sum_of_emotions_probabilities = [float(elem) for elem in sum_of_emotions_probabilities]
                 maxindex=int(np.argmax(sum_of_emotions_probabilities))
                 label=emotion_dict[maxindex]
-                # print(label)
                 labels.append(label)
                 probabilities.append(sum_of_emotions_probabilities)
-                # print(sum_of_emotions_probabilities)
-                # print(label)
                 sum_of_emotions_probabilities = np.array([0, 0, 0, 0, 0, 0, 0])
                 count = 0
-                # print("10 seconds passed")
+                # 10 seconds passed
             limit = 0
 
-            # print("One person detection over ----", label)
-        # print("Number of people in the frame", no_of_person)
-        # print("Frame number", total_no_of_frames) 
         cv2.imshow('your_face', frame)
         if cv2.waitKey(1)  & 0xFF == ord('q'):
             break
@@ -150,8 +134,6 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
     cv2.destroyAllWindows()
     if limit < seconds_interval:
         loops_covered += 1
-        # print(sum_of_emotions_probabilities)
-        # print("Sum_of_Emotional_Probabilities", sum_of_emotions_probabilities)
         sum_of_emotions_probabilities = list(sum_of_emotions_probabilities)
         if sum_of_emotions_probabilities == [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]:
             labels.append("No person detected")
@@ -165,10 +147,6 @@ def Emotion_Detection(emotion_model_path, prototext, model, input_video, c):
             label = emotion_dict[maxindex]
             labels.append(label)
             probabilities.append(list(sum_of_emotions_probabilities))
-    # print("Total nunmber of frames in the video are", total_no_of_frames)
-    # print("Frames per second for this video is : {0}".format(fps))
-    # print("No of loops to be covered", no_of_loops)
-    # print("Loops covered", loops_covered)
     print("Emotion Labels", labels)
     print("Emotion Probabilities ", probabilities)
     print("Length of Emotion Probabilities", len(probabilities))

@@ -14,17 +14,15 @@ ap.add_argument("-c","--confidence",type=float,default=0.5,help="minimum probabi
 
 args=vars(ap.parse_args())
 
-# print("[INFO] loading model...")
 net = cv2.dnn.readNetFromCaffe(args["prototext"], args["model"])
 
-# print("[INFO] starting video stream...")
 if args["input"] == "self":
     cap = cv2.VideoCapture(0)
 else:
     cap = cv2.VideoCapture(str(args['input']))
 
 time.sleep(2.0)
-# print("Entering While loop")
+
 while True:
     ret, frame = cap.read()
     frame = imutils.resize(frame,width=400)

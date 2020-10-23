@@ -17,14 +17,11 @@ def background(input_video):
 
     property_id = int(cv2.CAP_PROP_FRAME_COUNT) 
     total_no_of_frames = int(cv2.VideoCapture.get(cap, property_id)) 
-    # print("Total nunmber of frames in the video are", total_no_of_frames)
 
     fps = cap.get(cv2.CAP_PROP_FPS)
-    # print("Frames per second for this video is : {0}".format(fps))
 
     seconds_interval = fps * 10
     no_of_loops = int(total_no_of_frames // seconds_interval) + 1
-    # print("No of loops to be covered", no_of_loops)
 
     loops_covered = 0 # Tracks the number of 10 seconds interval covered.
 
@@ -44,18 +41,15 @@ def background(input_video):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
         blur = cv2.blur(gray, (5, 5)) 
-        # print(cv2.mean(blur)[0])
 
         if cv2.mean(blur)[0] <= 127:
             cv2.putText(frame, "DARK", (frame.shape[1] // 2, frame.shape[0] // 2), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)  
             dark += 1
-            # print("dark")
             # The range for a pixel's value in grayscale is (0-255), dark for less than 127 and light for more than 127
 
         elif cv2.mean(blur)[0] > 127:
             cv2.putText(frame, "LIGHT", (frame.shape[1] // 2, frame.shape[0] // 2), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
             light += 1
-            # print("light")
 
         if limit == int(seconds_interval):
 
@@ -63,11 +57,7 @@ def background(input_video):
 
             values_for_each_background = {"Dark" : dark, "Light" : light}
 
-            # print(values_for_each_background)
-
             max_background = max(values_for_each_background, key = values_for_each_background.get)
-
-            # print(max_background)
 
             if max_background == 'Dark':
                 probability = [0.0, 1.0]
@@ -76,7 +66,6 @@ def background(input_video):
                 probability = [1.0, 0.0]
 
             labels.append(max_background)
-            # print(probability)
             probabilities.append(probability)
             dark = 0
             light = 0
@@ -92,13 +81,10 @@ def background(input_video):
     if limit < seconds_interval:
         loops_covered += 1
 
-        values_for_each_background = {"Dark" : dark, "Light" : light} #, "Neutral" : neutral}
-
-        # print(values_for_each_background)
+        values_for_each_background = {"Dark" : dark, "Light" : light}
 
         max_background = max(values_for_each_background, key = values_for_each_background.get)
 
-        # print(max_background)
         if max_background == 'Dark':
             probability = [0.0, 1.0]
 
@@ -109,12 +95,6 @@ def background(input_video):
         probabilities.append(probability)
         dark = 0
         light = 0
-
-    # print("Total nunmber of frames in the video are", total_no_of_frames)
-    # print("Frames per second for this video is : {0}".format(fps))
-    # print("No of loops to be covered", no_of_loops)
-    # print("Loops covered", loops_covered)
-    # print("Probabilities ", probabilities)
 
     print("Background Labels:", labels)
     print("Background Probabilities ", probabilities)
