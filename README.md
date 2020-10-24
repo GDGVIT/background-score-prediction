@@ -3,7 +3,7 @@
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
 </a>
 	<h2 align="center"> Background Music Generation for Videos  </h2>
-	<h4 align="center"> Given a video the task is to automatically create background music for the given video. <h4>
+	<h4 align="center"> Given a video the task is to automatically create background music for the video which is given. <h4>
 </p>
 
 ---
