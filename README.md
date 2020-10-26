@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://dscvit.com">
-	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
+	<img src="https://user-images.githubusercontent.com/30529572/92081025-fabe6f00-edb1-11ea-9169-4a8a61a5dd45.png" alt="DSC VIT"/>
 </a>
 	<h2 align="center"> Background Music Generation for Videos  </h2>
 	<h4 align="center"> Given a video the task is to automatically create background music for the given video. <h4>
@@ -12,10 +12,7 @@
 
 
 ## Functionalities
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
+- [x]  < Predict Genre for each 10 second interval of the video. >
 
 <br>
 
@@ -23,21 +20,23 @@
 ## Instructions to run
 
 * Pre-requisites:
-	-  https://drive.google.com/drive/u/0/folders/1jXcriBNsaVRd27Q4894wnjBIXNOju8Dl
-	-  < insert pre-requisite >
+	-  < Virtual Enviornment >
+	-  < Packages given the requirements.txt >
 
-* directions to install  
+* directions to install
+
+   First make a VirtualEnv and install requirements.txt
 
 	bash
 
 		pip3 install -r requirements.txt
 
 
-* directions to execute 
+* directions to execute
 
 	bash
 
-		python3 human_activity_reco.py --model resnet-34_kinetics.onnx --classes action_recognition_kinetics.txt --input example_activities.mp4
+		python3 main.py
 
 
 ## Contributors
@@ -48,52 +47,20 @@
 
 <td>
 
-John Doe
+Chanakya Vivek Kapoor
 
 <p align="center">
-<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
+<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Chanakya Vivek Kapoor">
 </p>
 <p align="center">
-<a href = "https://github.com/person1"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/person1">
+<a href = "https://github.com/chanakya1310"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://www.linkedin.com/in/chanakya-vivek-kapoor-a04496167/">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
 </p>
 </td>
 
 
-<td>
-
-John Doe
-
-<p align="center">
-<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
-</p>
-<p align="center">
-<a href = "https://github.com/person2"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/person2">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
-</a>
-</p>
-</td>
-
-
-
-<td>
-
-John Doe
-
-<p align="center">
-<img src = "https://dscvit.com/images/dsc-logo-square.svg" width="150" height="150" alt="Your Name Here (Insert Your Image Link In Src">
-</p>
-<p align="center">
-<a href = "https://github.com/person3"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-<a href = "https://www.linkedin.com/in/person3">
-<img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
-</a>
-</p>
-</td>
-</tr>
   </table>
   
 ## License
