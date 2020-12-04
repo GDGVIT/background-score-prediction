@@ -1,0 +1,6 @@
+{
+    "app_name": "Genre",
+    "author": "chunky",
+    "main_module": "src/main/python/main.py",
+    "version": "1.0.0"
+}
