@@ -20,24 +20,28 @@
 ## Instructions to run
 
 * Pre-requisites:
-	-  < Virtual Enviornment >
-	-  < Packages given the requirements.txt >
+	-  Python 3.6 or 3.7
+	-  Dependencies from requirements.txt
+    
+* Directions to Install
 
-* directions to install
-
-   First make a VirtualEnv and install requirements.txt
-
-	bash
-
-		pip3 install -r requirements.txt
-
-
+   First clone this repository onto your system.<br>
+   Then, create a Virtual Environment and install the packages from requirements.txt: <br>
+   Navigate to this repository, create a Virtual Environment and activate it: <br>
+   ```bash
+  cd path/to/cloned/repo
+  python3 -m venv env
+  source env/bin/activate
+  ```
+  Install the python dependencies from requirements.txt:
+    ```bash
+    pip install requirements.txt
+     ```
 * directions to execute
-
-	bash
-
-		python3 main.py
-
+    From anywhere in the project directory, run the following command in the terminal -
+    ```bash
+    fbs run
+    ```
 
 ## Contributors
 
