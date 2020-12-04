@@ -1,0 +1,4 @@
+{
+    "mac_bundle_identifier": "com.chunky.genre",
+    "installer": "${app_name}.dmg"
+}
