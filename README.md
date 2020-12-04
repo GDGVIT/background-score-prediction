@@ -12,7 +12,7 @@
 
 
 ## Functionalities
-- [x]  < Predict Genre for each 10 second interval of the video. >
+- [x]  Predict the Genre for each 10-second interval of the video.
 
 <br>
 
@@ -37,7 +37,8 @@
     ```bash
     pip install requirements.txt
      ```
-* directions to execute
+* Directions to Execute
+
     From anywhere in the project directory, run the following command in the terminal -
     ```bash
     fbs run
