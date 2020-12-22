@@ -2,13 +2,12 @@
 <a href="https://dscvit.com">
 	<img src="https://user-images.githubusercontent.com/30529572/92081025-fabe6f00-edb1-11ea-9169-4a8a61a5dd45.png" alt="DSC VIT"/>
 </a>
-	<h2 align="center"> Background Music Generation for Videos  </h2>
-	<h4 align="center"> Given a video the task is to automatically create background music for the given video. <h4>
+	<h2 align="center"> Genre Prediction for Videos  </h2>
+	<h4 align="center"> Given a video the task is to predict the Genre for each 10-second interval of the video. <h4>
 </p>
 
 ---
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
+  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://www.figma.com/file/0XxRAXmjlGwNHXSTdNMvO5/GenrePrediction?node-id=0%3A1)
 
 
 ## Functionalities
@@ -18,16 +17,23 @@
 
 
 ## Instructions to run
-
+  
 * Pre-requisites:
-	-  Python 3.6 or 3.7
+	-  Python 3.6 or 3.7 or 3.8
 	-  Dependencies from requirements.txt
+
+<!-- * Using pip
+  -  create a virtual environment then:
+  ```bash
+  pip install background
+  Genre_Prediction
+  ``` -->
     
 * Directions to Install
 
-   First clone this repository onto your system.<br>
-   Then, create a Virtual Environment and install the packages from requirements.txt: <br>
-   Navigate to this repository, create a Virtual Environment and activate it: <br>
+   - First clone this repository onto your system.<br>
+   - Then, create a Virtual Environment and install the packages from requirements.txt: <br>
+   - Navigate to this repository, create a Virtual Environment and activate it: <br>
    ```bash
   cd path/to/cloned/repo
   python3 -m venv env
@@ -43,6 +49,8 @@
     ```bash
     fbs run
     ```
+
+
 
 ## Contributors
 
