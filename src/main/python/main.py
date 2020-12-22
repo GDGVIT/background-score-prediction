@@ -5,8 +5,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import sys
 import re
-from background import background
-from Emotion_Detection2 import Emotion_Detection
+from .background import background
+from .Emotion_Detection2 import Emotion_Detection
 import numpy as np
 import pandas as pd
 import pickle
@@ -381,7 +381,8 @@ class Ui_MainWindow(QtCore.QObject):
         self.btn_process.setFont(self.font_asleep)
 
 
-if __name__ == '__main__':
+def main():
+    print("Entering fbs")
     appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
@@ -389,3 +390,8 @@ if __name__ == '__main__':
     MainWindow.show()
     exit_code = appctxt.app.exec_()      # 2. Invoke appctxt.app.exec_()
     sys.exit(exit_code)
+    os.system('fbs run')
+
+
+if __name__ == '__main__':
+    main()

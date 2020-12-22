@@ -1,4 +1,4 @@
-absl-py==0.10.0
+absl-py==0.11.0
 altgraph==0.17
 astor==0.8.1
 astunparse==1.6.3
@@ -9,6 +9,7 @@ cycler==0.10.0
 fbs==0.9.0
 future==0.18.2
 gast==0.3.3
+setuptools==41.0.0
 google-auth==1.21.1
 google-auth-oauthlib==0.4.1
 google-pasta==0.2.0
@@ -22,8 +23,6 @@ Keras==2.4.3
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
-macholib==1.14
-Markdown==3.2.2
 numpy==1.18.5
 oauthlib==3.1.0
 opencv-python-headless==4.4.0.46
