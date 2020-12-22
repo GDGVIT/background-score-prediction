@@ -1,0 +1,3 @@
+[console_scripts]
+Genre_Prediction = src.main.python:main
+
