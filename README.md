@@ -21,7 +21,7 @@
 
 * Pre-requisites:
 	-  Python 3.6 or 3.7
-	-  Dependencies from requirements.txt
+	-  Dependencies available in requirements.txt 
     
 * Directions to Install
 
